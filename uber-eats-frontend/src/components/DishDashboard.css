@@ -1,0 +1,50 @@
+.dish-dashboard {
+    padding: 20px;
+    background-color: #f8f8f8;
+}
+
+.dish-dashboard h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.dish-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.dish-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+}
+
+.dish-card h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.dish-card p {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #666;
+}
+
+.dish-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+.error {
+    color: red;
+    text-align: center;
+}

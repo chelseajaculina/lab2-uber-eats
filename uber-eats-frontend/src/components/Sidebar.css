@@ -1,0 +1,85 @@
+.sidebar {
+    width: 250px;
+    background-color: white;
+    padding: 20px;
+    border-right: 1px solid #e0e0e0;
+    height: 100vh;
+  }
+  
+  .profile {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .profile h3 {
+    margin: 10px 0;
+    font-size: 1.2em;
+  }
+  
+  .manage-account {
+    color: #4CAF50;
+    text-decoration: none;
+    font-size: 0.9em;
+  }
+  
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .nav-links a {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    color: black;
+    text-decoration: none;
+    font-size: 1em;
+  }
+  
+  .nav-links a:hover {
+    background-color: #f0f0f0;
+    border-radius: 5px;
+  }
+  
+  .nav-links a svg {
+    margin-right: 10px;
+  }
+  
+  .special {
+    color: #FFA500;
+    font-weight: bold;
+  }
+  
+  .sign-out {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: transparent;
+    color: #666;
+    text-align: left;
+    font-size: 1em;
+    cursor: pointer;
+  }
+  
+  .sign-out:hover {
+    color: red;
+  }
+  
+  .extra-links {
+    margin-top: 20px;
+    border-top: 1px solid #e0e0e0;
+    padding-top: 10px;
+  }
+  
+  .extra-links a {
+    display: block;
+    color: black;
+    text-decoration: none;
+    padding: 5px 0;
+  }
+  
+  .extra-links a:hover {
+    background-color: #f0f0f0;
+    border-radius: 5px;
+  }
+  

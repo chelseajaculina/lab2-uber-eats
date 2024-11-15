@@ -1,0 +1,10 @@
+.logout-button {
+    color: #000;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    background: #000;  /* Remove default background */
+    border: none;      /* Remove default border */
+    padding: 0.5rem;   /* Optional padding to make it look button-like */
+    color: #fff;
+}

@@ -1,0 +1,74 @@
+.orders-management {
+    padding: 20px;
+    background-color: #f8f8f8;
+}
+
+.orders-management h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.status-filter {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.status-filter label {
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+.orders-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.order-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+}
+
+.order-card h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.order-card p {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #666;
+}
+
+.status-update {
+    margin-top: 10px;
+}
+
+.customer-profile {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.customer-profile h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.error {
+    color: red;
+    text-align: center;
+}

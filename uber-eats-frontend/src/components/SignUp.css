@@ -1,0 +1,116 @@
+/* Shared container styling */
+
+/* Shared header styling */
+.signup-header, .login-header {
+    background-color: transparent;
+    width: 100%;
+    text-align: left;
+    padding: 10px;
+}
+
+.signup-container, .login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+
+}
+
+.brand-title {
+    color: white;
+    font-size: 24px;
+}
+
+.brand-title span {
+    color: #34a853; /* Green color for "Eats" */
+}
+
+/* Shared form styling */
+.signup-form, .login-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px;
+    margin-top: 20px;
+}
+
+.signup-form h2, .login-form h2 {
+    text-align: left;
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+    text-align: center;
+}
+
+.signup-form input, .login-form input {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+.continue-button {
+    background-color: black;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.line {
+    flex: 1;
+    height: 1px;
+    background-color: #ccc;
+    border: none;
+}
+
+.google-button, .apple-button, .qr-code-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f5f5f5;
+    color: black;
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.google-button img, .apple-button img, .qr-code-button img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.disclaimer {
+    font-size: 12px;
+    color: gray;
+    text-align: center;
+    margin-top: 10px;
+    line-height: 1.5;
+}
+
+.link-button {
+    color: #000;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    background: #000;  /* Remove default background */
+    border: none;      /* Remove default border */
+    padding: 0.5rem;   /* Optional padding to make it look button-like */
+    color: #fff;
+}

@@ -1,0 +1,240 @@
+.home-container {
+  width: 100%;
+  padding: 1rem;
+  font-family: Arial, Helvetica, sans-serif;
+  /* background: url('/public/images/landing-bg.jpg') center/cover no-repeat; */
+
+}
+
+/* Navigation Bar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #fff;
+}
+
+.navbar-left,
+.navbar-center,
+.navbar-right {
+  display: flex;
+  align-items: center;
+}
+
+.menu-button {
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.brand-title {
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin-left: 1rem;
+  text-decoration: none;
+  color: #000;
+}
+
+.navbar-center .delivery-button,
+.navbar-center .pickup-button {
+  margin: 0 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #f7f7f7;
+  border: none;
+  cursor: pointer;
+}
+
+.location-info {
+  display: flex;
+  align-items: center;
+}
+
+.search-icon {
+  margin-right: 1rem;
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
+.login-button,
+.signup-button {
+  margin-left: 1rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+  text-decoration: none;
+}
+
+.signup-button {
+  background-color: #000;
+  color: #fff;
+}
+
+.login-button {
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #000;
+}
+
+/* Promotions */
+.promotions {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 2rem;
+}
+
+.promotion-card {
+  width: 30%;
+  background-color: #f7f7f7;
+  padding: 1.5rem;
+  border-radius: 10px;
+}
+
+.promotion-button {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+
+/* Categories */
+.categories {
+  display: flex;
+  overflow-x: scroll;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.category-item {
+  text-align: center;
+}
+
+/* National Brands */
+.brands-section {
+  padding: 1rem;
+}
+
+.brands {
+  display: flex;
+  gap: 1rem;
+}
+
+.brand-card {
+  width: 20%;
+  background-color: #f7f7f7;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.brand-card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.brand-card h3 {
+  margin-top: 0.5rem;
+  font-size: 1.25rem;
+}
+
+
+/* Home.css */
+
+.home-container {
+  padding: 20px;
+}
+
+/* Horizontal scrolling for categories */
+.categories-scroll {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding: 10px 0;
+  scrollbar-width: thin; /* For modern browsers */
+}
+
+.category-item {
+  flex: 0 0 auto;
+  text-align: center;
+  cursor: pointer;
+}
+
+.category-item img {
+  width: 60px;
+  height: 60px;
+}
+
+/* Promotions Section */
+.promotions-section {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding: 20px 0;
+}
+
+.promotion-card {
+  background-color: #f9f9f9;
+  padding: 20px;
+  flex: 0 0 auto;
+  border-radius: 10px;
+  text-align: center;
+  width: 250px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.promotion-button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+
+/* Brands Section */
+.brands-section {
+  margin-top: 30px;
+}
+
+.brands-scroll {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+}
+
+.brand-card {
+  flex: 0 0 auto;
+  width: 200px;
+  text-align: center;
+}
+
+.brand-card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* Home.css */
+
+.favorite-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  color: #e0245e; /* Set color for heart icon (red) */
+  font-size: 24px;
+}
+
+.brand-card {
+  position: relative; /* Required for positioning favorite icon inside the card */
+  flex: 0 0 auto;
+  width: 200px;
+  text-align: center;
+}
+
