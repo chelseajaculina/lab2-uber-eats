@@ -1,0 +1,221 @@
+/* General Container Styling */
+.home-container {
+  width: 100%;
+  padding: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Navigation Bar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #fff;
+  box-shadow: none; /* Ensure no shadow */
+  border-bottom: none; /* Ensure no border */
+}
+
+.navbar-left,
+.navbar-center,
+.navbar-right {
+  display: flex;
+  align-items: center;
+}
+
+.menu-button {
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.brand-title {
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin-left: 1rem;
+  text-decoration: none;
+  color: #000;
+}
+
+/* Delivery and Pickup Buttons */
+.navbar-center .delivery-button,
+.navbar-center .pickup-button {
+  margin: 0 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #f7f7f7;
+  border: none;
+  cursor: pointer;
+}
+
+/* Categories Section */
+.categories-scroll {
+  display: flex;
+  overflow-x: auto;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+.category-item {
+  display: flex;
+  flex-direction: column; /* Stack icon and text vertically */
+  align-items: center;
+  text-align: center;
+  width: 80px; /* Adjust width for uniformity */
+}
+
+.category-item img {
+  width: 50px;
+  height: auto;
+  margin-bottom: 5px; /* Space between icon and text */
+}
+
+.category-item span {
+  font-size: 14px;
+  color: #333;
+}
+
+/* Promotions Section */
+.promotions {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+.promotion-card {
+  background-color: #f9f9f9;
+  padding: 1.5rem;
+  border-radius: 10px;
+  text-align: center;
+  width: 250px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.promotion-button {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* Brands Section */
+.brands-section {
+  margin-top: 40px;
+}
+
+.brands-scroll {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+}
+
+.brand-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  text-align: center;
+  width: 200px;
+  flex-shrink: 0;
+}
+
+.brand-card img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+/* Restaurant Page Specifics */
+.restaurant-page {
+  padding: 20px;
+}
+
+.restaurant-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.restaurant-logo {
+  width: 100%;
+  max-width: 150px;
+  height: 150px;
+  object-fit: contain;
+  border-radius: 50%;
+  border: 2px solid #ddd;
+  background-color: #fff;
+}
+
+.restaurant-details {
+  max-width: 800px;
+  flex-grow: 1;
+}
+
+.restaurant-details h1 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.restaurant-details p {
+  margin: 5px 0;
+  color: #555;
+}
+
+/* Restaurant List and Cards */
+.restaurants-section {
+  margin-top: 20px;
+}
+
+.restaurants-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.restaurant-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 300px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.rating {
+  color: #4CAF50;
+  font-weight: bold;
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+}
+
+.restaurant-image {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.favorite-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #e0245e; /* Red color for heart icon */
+  font-size: 24px;
+}
+
+.heart-icon.filled {
+  color: #ff5a5f; /* Filled heart color */
+}

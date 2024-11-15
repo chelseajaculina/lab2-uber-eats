@@ -1,0 +1,144 @@
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: white;
+
+}
+
+.menu-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5em;
+}
+
+/* Side Menu */
+.side-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 280px;
+    height: 100vh;
+    background-color: white;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    overflow-y: auto;
+    transition: transform 0.3s ease;
+    z-index: 100;
+}
+
+.close-button {
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+/* User Info */
+.user-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.user-profile-pic {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.user-info h3 {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+.manage-account-link {
+    color: #1c88f4;
+    font-size: 0.9em;
+    margin-top: 5px;
+    text-decoration: none;
+}
+
+/* Side Links */
+.side-links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.side-links a {
+    display: flex;
+    align-items: center;
+    font-size: 1em;
+    color: #333;
+    text-decoration: none;
+}
+
+.side-links a:hover {
+    color: #1c88f4;
+}
+
+.side-links svg {
+    margin-right: 10px;
+    font-size: 1.2em;
+}
+
+/* Promotions */
+.promo-text {
+    color: #e5a823;
+    font-size: 0.9em;
+    margin-left: 10px;
+}
+
+.invite-reward {
+    color: #888;
+    font-size: 0.9em;
+    margin-left: 10px;
+}
+
+/* Logout Button */
+.logout-button {
+    margin-top: 20px;
+    width: 100%;
+    text-align: left;
+    color: #333;
+    font-size: 1em;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 10px 0;
+    border-top: 1px solid #ddd;
+}
+
+/* Cart Icon and Badge */
+.cart-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    color: #333;
+}
+
+.cart-container .shopping-cart-icon {
+    font-size: 1.5em;
+}
+
+.cart-container .cart-badge {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: #333;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 12px;
+    font-weight: bold;
+}

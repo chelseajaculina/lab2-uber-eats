@@ -1,0 +1,65 @@
+/* src/components/CartModal.css */
+.cart-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 500px;
+  }
+  
+  .cart-items {
+    max-height: 300px;
+    overflow-y: auto;
+    margin-bottom: 20px;
+  }
+  
+  .cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .quantity-controls {
+    display: flex;
+    align-items: center;
+  }
+  
+  .quantity-controls button {
+    background: none;
+    border: 1px solid #ccc;
+    padding: 5px;
+    cursor: pointer;
+    margin: 0 5px;
+  }
+  
+  .cart-total {
+    font-weight: bold;
+    margin-top: 20px;
+  }
+  
+  .cart-actions {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .cart-actions button {
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  .order-button {
+    background-color: #b45309;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
