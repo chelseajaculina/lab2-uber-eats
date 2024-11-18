@@ -1,5 +1,5 @@
 from django.urls import path, include
-from .views import UserProfileView, CustomerSignUpView, LogoutView, CustomerProfileView, UploadProfilePictureView, GetCustomerDataView, GetProfilePictureView, CustomerLoginView, TokenRefreshView, toggle_favorite
+from .views import UserProfileView, CustomerSignUpView, LogoutView, CustomerProfileView, UploadProfilePictureView, GetCustomerDataView, GetProfilePictureView, CustomerLoginView, TokenRefreshView
 
 urlpatterns = [
     path('signup/', CustomerSignUpView.as_view(), name='customer-signup'),
@@ -11,15 +11,10 @@ urlpatterns = [
     path('upload-profile-picture/', UploadProfilePictureView.as_view(), name='upload-profile-picture'),
     
     path('profile-picture/', GetProfilePictureView.as_view(), name='get-profile-picture'),
-    path('user-profile/', GetCustomerDataView.as_view(), name='user-profile'),
+    path('user-profile/', UserProfileView.as_view(), name='user-profile'),
 
     path('logout/', LogoutView.as_view(), name='logout'),
     path('token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
-    
-
-
-
-
 
 
 ]

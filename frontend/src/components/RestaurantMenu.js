@@ -252,10 +252,8 @@ const handleImageChange = (e) => {
                 <label>Select category:</label>
                 <select name="category" value={dishData.category} onChange={handleChange}>
                   <option value="Appetizer">Appetizer</option>
-                  <option value="Salad">Salad</option>
                   <option value="Main Course">Main Course</option>
                   <option value="Dessert">Dessert</option>
-                  <option value="Beverage">Beverage</option>
                 </select>
               </div>
 

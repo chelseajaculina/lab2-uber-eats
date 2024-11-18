@@ -165,54 +165,14 @@ class UploadProfilePictureView(APIView):
         return Response({'profilePicture': profile_picture_url}, status=status.HTTP_200_OK)
 
 
-# views.py
-from rest_framework.views import APIView
-from rest_framework.response import Response
-from rest_framework.permissions import IsAuthenticated
-from rest_framework import status
-from .models import Customer
-from restaurants.models import Restaurant
-from .serializers import CustomerSerializer
-
-class GetCustomerDataView(APIView):
-    permission_classes = [IsAuthenticated]
+class GetCustomerDataView(generics.RetrieveAPIView):
+    serializer_class = CustomerSerializer
+    permission_classes = [permissions.IsAuthenticated]
 
     def get(self, request):
-        # Retrieve the authenticated customer's data
-        try:
-            customer = Customer.objects.get(user=request.user)
-            serializer = CustomerSerializer(customer)
-            return Response(serializer.data, status=status.HTTP_200_OK)
-        except Customer.DoesNotExist:
-            return Response({'error': 'Customer profile not found'}, status=status.HTTP_404_NOT_FOUND)
-
-    def post(self, request):
-        # Add the restaurant to favorites
-        restaurant_name = request.data.get('restaurant_name')
-        if not restaurant_name:
-            return Response({'error': 'Restaurant name is required'}, status=status.HTTP_400_BAD_REQUEST)
-
-        try:
-            customer = Customer.objects.get(user=request.user)
-            restaurant = Restaurant.objects.get(restaurant_name=restaurant_name)
-
-            # Add restaurant to favorites
-            if restaurant not in customer.favorites.all():
-                customer.favorites.add(restaurant)
-                return Response({'message': f'{restaurant_name} added to favorites'}, status=status.HTTP_200_OK)
-            else:
-                return Response({'message': f'{restaurant_name} is already in favorites'}, status=status.HTTP_200_OK)
-
-        except Restaurant.DoesNotExist:
-            return Response({'error': 'Restaurant not found'}, status=status.HTTP_404_NOT_FOUND)
-        except Customer.DoesNotExist:
-            return Response({'error': 'Customer not found'}, status=status.HTTP_404_NOT_FOUND)
-        except Exception as e:
-            return Response({'error': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-
-    
-
-from rest_framework.views import APIView
+        customer = request.user  # Assumes the user is authenticated
+        serializer = CustomerSerializer(customer)
+        return Response(serializer.data)
 
 
 class GetProfilePictureView(APIView):
@@ -265,36 +225,3 @@ class UpdateProfileView(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     
 
-# customers/views.py
-# views.py
-# views.py
-from rest_framework.decorators import api_view, permission_classes
-from rest_framework.permissions import IsAuthenticated
-from rest_framework.response import Response
-from rest_framework import status
-from .models import Customer
-from restaurants.models import Restaurant
-
-@api_view(['POST'])
-@permission_classes([IsAuthenticated])
-def toggle_favorite(request, restaurant_name):
-    try:
-        # Retrieve the customer associated with the authenticated user
-        customer = Customer.objects.get(user=request.user)  # Assuming `user` is a ForeignKey to `User` in `Customer`
-
-        # Retrieve the restaurant by name
-        restaurant = Restaurant.objects.get(restaurant_name=restaurant_name)
-
-        # Add the restaurant to the customer's favorites if not already added
-        if restaurant not in customer.favorites.all():
-            customer.favorites.add(restaurant)
-            return Response({'message': f'{restaurant_name} added to favorites'}, status=status.HTTP_200_OK)
-        else:
-            return Response({'message': f'{restaurant_name} is already in favorites'}, status=status.HTTP_200_OK)
-
-    except Restaurant.DoesNotExist:
-        return Response({'error': 'Restaurant not found'}, status=status.HTTP_404_NOT_FOUND)
-    except Customer.DoesNotExist:
-        return Response({'error': 'Customer not found'}, status=status.HTTP_404_NOT_FOUND)
-    except Exception as e:
-        return Response({'error': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)

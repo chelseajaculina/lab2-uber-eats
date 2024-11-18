@@ -15,7 +15,7 @@ const FavoritesTab = () => {
             }
 
             try {
-                const response = await axios.get('http://localhost:8000/api/customers/favorites/', {
+                const response = await axios.get('http://localhost:8000/api/favorites/', {
                     headers: { Authorization: `Bearer ${token}` }
                 });
                 setFavorites(response.data.map(fav => fav.restaurant));

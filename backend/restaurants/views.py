@@ -87,27 +87,40 @@ class RestaurantProfileView(APIView):
             return Response({'error': 'Restaurant not found.'}, status=status.HTTP_404_NOT_FOUND)
     
 
-# Upload Restaurant Profile Picture View
-
 class UploadRestaurantProfilePictureView(APIView):
     parser_classes = [MultiPartParser, FormParser]
     permission_classes = [permissions.IsAuthenticated]
+
     def post(self, request, *args, **kwargs):
-        try:
-            restaurant = request.user # Ensure that the User model has a linked Restaurant object.
-        except Restaurant.DoesNotExist:
-            return Response({'error': 'Restaurant profile not found'}, status=status.HTTP_404_NOT_FOUND)
+        # Debugging: Check user and headers
+        print(f"User: {request.user}, Authenticated: {request.user.is_authenticated}")
+        print(f"Headers: {request.headers}")
+
+        if not request.user.is_authenticated:
+            return Response({'error': 'User not authenticated'}, status=status.HTTP_403_FORBIDDEN)
+
+        # Retrieve the file from the request
         file = request.data.get('profile_picture')
         if not file:
             return Response({'error': 'No file provided'}, status=status.HTTP_400_BAD_REQUEST)
-        # Update profile picture
-        restaurant.profile_picture = file
-        restaurant.save()
 
-        profile_picture_url = restaurant.profile_picture.url
-        
-        return Response({'profilePicture': profile_picture_url}, status=status.HTTP_200_OK)
-    
+          # Debugging: Check file details
+        print(f"File name: {file.name}, File size: {file.size}")
+
+        # Update profile picture for the authenticated user's restaurant profile
+        try:
+            # Assuming `request.user` has a related `Restaurant` profile
+            restaurant = request.user.restaurant
+            restaurant.profile_picture = file
+            restaurant.save()
+
+            # Build absolute URL for the profile picture
+            profile_picture_url = request.build_absolute_uri(restaurant.profile_picture.url)
+            return Response({'profilePicture': profile_picture_url}, status=status.HTTP_200_OK)
+
+        except Restaurant.DoesNotExist:
+            return Response({'error': 'Restaurant profile not found'}, status=status.HTTP_404_NOT_FOUND)
+
 # Get Restaurant Data View
 class GetRestaurantDataView(APIView):
     serializer_class = RestaurantSerializer

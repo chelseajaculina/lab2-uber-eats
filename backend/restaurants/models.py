@@ -10,7 +10,7 @@ def upload_path(instance, filename):
     return f'profile_pictures/{instance.restaurant_name}/{filename}'
 
 
-def dish_upload_path(instance, filename):
+def upload_path(instance, filename):
     # Access restaurant's restaurant_name from the related Restaurant instance
     
     return f'profile_pictures/{instance.restaurant.restaurant_name}/{filename}'
@@ -84,7 +84,7 @@ class Dish(models.Model):
     restaurant = models.ForeignKey(Restaurant, on_delete=models.CASCADE, related_name='dishes')
     name = models.CharField(max_length=100)
     ingredients = models.TextField()
-    image = models.ImageField(upload_to=dish_upload_path, null=True, blank=True)
+    image = models.ImageField(upload_to=upload_path, null=True, blank=True)
     price = models.DecimalField(max_digits=6, decimal_places=2)
     description = models.TextField(null=True, blank=True)
     category = models.CharField(max_length=50, choices=CATEGORY_CHOICES)
