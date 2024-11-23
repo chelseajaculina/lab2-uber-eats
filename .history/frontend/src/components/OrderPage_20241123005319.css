@@ -1,0 +1,76 @@
+.order-page {
+  padding: 20px;
+}
+
+.error-message {
+  color: white;
+  background-color: #f44336;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.success-message {
+  color: white;
+  background-color: #4caf50;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.address-section {
+  margin-bottom: 20px;
+}
+
+.new-address-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.address-input {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.order-summary {
+  margin-top: 20px;
+}
+
+.summary-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.place-order-button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.place-order-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.confirmation-message {
+  background-color: #e0f7e0;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.dashboard-button {
+  margin-top: 10px;
+  background-color: black;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}

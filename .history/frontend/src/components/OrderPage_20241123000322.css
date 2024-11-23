@@ -1,0 +1,104 @@
+.order-page {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+
+.order-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.logout-button {
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.order-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.address-section {
+  width: 60%;
+}
+
+.address-display {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+}
+
+.new-address-form {
+  margin-top: 20px;
+}
+
+.address-input {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.order-summary {
+  width: 35%;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border: 1px solid #ddd;
+}
+
+.summary-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.place-order-button {
+  width: 100%;
+  padding: 10px;
+  background-color: g;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.confirmation-message {
+  margin-top: 20px;
+  background-color: #e8f5e9;
+  padding: 15px;
+  border: 1px solid #c8e6c9;
+  color: #388e3c;
+}
+
+.dashboard-button {
+  background-color: black;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.error-message {
+  background-color: #f8d7da;
+  color: #842029;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #f5c2c7;
+  border-radius: 4px;
+}
+
+.success-message {
+  background-color: #d1e7dd;
+  color: #0f5132;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #badbcc;
+  border-radius: 4px;
+}

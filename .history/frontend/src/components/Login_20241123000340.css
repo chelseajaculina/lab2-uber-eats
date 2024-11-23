@@ -1,0 +1,109 @@
+/* Container for the entire login page */
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    background-color: #ffffff;
+}
+
+/* Title for the login section */
+.login-title {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+/* Flex container to hold both forms side by side */
+.login-forms {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    max-width: 100px;
+    gap: 20px; /* Space between the two forms */
+}
+
+/* Styling for each individual form */
+.form-container {
+    flex: 1;
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Form titles */
+.form-container h2 {
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .login-forms {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .form-container {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+
+/* Adjust navbar height */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 2rem; /* Increase padding for taller navbar */
+    background-color: transparent;
+}
+
+/* Style the brand title to ensure visibility in the taller navbar */
+
+
+
+/* Style the brand title to ensure visibility in the taller navbar */
+.brand-title {
+    font-size: 2rem; /* Set a consistent font size */
+    font-weight: bold; /* Consistent font weight */
+    color: #000;
+    display: flex;
+    align-items: center;
+}
+.brand-title span {
+    font-size: inherit;
+    font-weight: inherit;
+    color: z
+    margin-left: 4px; /* Adjust as needed */
+}
+
+
+/* Dropdown Selector Styling */
+.form-selector {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.form-select-dropdown {
+    padding: 10px;
+    font-size: 16px;
+    margin-left: 10px;
+}
+
+/* Login Title */
+.login-title {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Login Form Container */
+.login-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
