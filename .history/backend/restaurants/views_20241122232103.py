@@ -361,7 +361,7 @@ from django.contrib.auth import get_user_model
 from customers.models import Customer
 
 class CreateOrderView(APIView):
-    permission_classes = [AllowAny]
+    permission_classes = [Allow]
 
     def post(self, request):
         data = request.data
