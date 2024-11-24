@@ -53,7 +53,7 @@ urlpatterns = [
 
     # Orders
     path('orders/create/', CreateOrderView.as_view(), name='create_order'),
-    path('orders/detail/', OrderDetailView.as_view(), name='order-detail'),  # Add the detail view for orders
+    path('orders/', OrderDetailView.as_view(), name='order-detail'),  # Add the detail view for orders
 
-    path('orders/', OrderListView.as_view(), name='order-list'),
+    path('orders/list/', OrderListView.as_view(), name='order-list'),
 ]
