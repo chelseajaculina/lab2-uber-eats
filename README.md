@@ -1,4 +1,4 @@
-# Uber Eats Simulation - Part 2 with Docker, Kubernetes, Kafka, AWS, and Redux #
+# Uber Eats Simulation - Part 2 with Docker, Kubernetes, Kafka, and Redux #
 
 A prototype of Uber Eats web app using Django backend and React frontend. This project lets users browse and order food from restaurants, manage profiles, etc.
 
@@ -85,16 +85,6 @@ npm start
 #### 4. Redux Integration #### 
 + Ensure Redux actions, reducers, and store are set up as per the provided example.
 + Update frontend components to use Redux for state management.
-
-
-## Deployment to AWS ## 
-
-1. Containerize the application using Docker.
-2. Push Docker images to AWS Elastic Container Registry (ECR).
-3. Deploy the Kubernetes cluster on AWS EKS.
-4. Use AWS S3 for hosting static files and Route 53 for domain management.
-5. Monitor services using AWS CloudWatch.
-
 
 ## API Endpoints ## 
 Main API routes:
