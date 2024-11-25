@@ -23,17 +23,16 @@ spec:
         io.kompose.service: frontend
     spec:
       containers:
-      - image: himani3/uber-eats-frontend:latest
+      - image: himani3/ubereats-frontend:latest
         name: frontend
-        command: ["sh", "-c", "mount -o remount,rw / && sleep 3600"]
         ports:
         - containerPort: 3000
           protocol: TCP
         volumeMounts:
-        - mountPath: /app/public
-          name: frontend-cm0
+        - mountPath: /app/public/images  # Correct target directory
+          name: images-volume
       restartPolicy: Always
       volumes:
-      - configMap:
-          name: frontend-cm0
-        name: frontend-cm0
+      - name: images-volume
+        hostPath:  # Use hostPath to point to the correct source directory
+          path: /app/build/images

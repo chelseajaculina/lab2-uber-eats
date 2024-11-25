@@ -23,7 +23,7 @@ spec:
         io.kompose.service: backend
     spec:
       containers:
-      - image: himani3/lab2-uber-eats-backend:latest
+      - image: himani3/ubereats-backend:latest
         name: backend
         ports:
         - containerPort: 8000
