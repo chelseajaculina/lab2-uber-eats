@@ -18,14 +18,9 @@ This project part 2 enhances the Lab 1 Uber Eats prototype by containerizing ser
 ++ Order Data (Cart, Order Status Updates).
 
 ## Technologies Used ## 
-+ Backend: Django, Django REST Framework
-+ Frontend: React, Axios (for API requests)
-+ Database: SQLite 
-
-+Backend: Docker, Kubernetes, Kafka, MongoDB, AWS
-+rontend: React, Redux
-+Database: MongoDB (with encrypted passwords)
-
++ Backend: Django, Django REST Framework, Docker, Kubernetes, Kafka, MongoDB, AWS
++ Frontend: React, Axios (for API requests),Redux
++ Database: SQLite, MongoDB (with encrypted passwords)
 
 ## Features ## 
 + User registration and login
@@ -39,63 +34,66 @@ This project part 2 enhances the Lab 1 Uber Eats prototype by containerizing ser
 + Node.js with npm
 + Django
 + React
++ Redux 
 
 ## Steps ##
-1. Clone this repository:
+### 1. Clone this repository: ### 
 
 - git clone https://github.com/your-username/your-project-name.git
 - cd your-project-name
 
-2. Backend Setup (Django):
-- Go to the backend folder:
-cd backend
+### 2. Backend Setup: ### 
 
-- Create a virtual environment and install dependencies:
-python3 -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
+#### 1. Dockerize Services:   ####
+ 
++ Build Docker images for User, Restaurant, and Order services.
++ Use the provided Dockerfile in each service directory.
 
-- Apply database migrations:
-python manage.py migrate
++ Example:
+  + docker build -t user-service ./user-service
 
-- Create an admin user:
-python manage.py createsuperuser
+#### 2. Kubernetes Deployment #### 
++ Deploy the services to a Kubernetes cluster
++ Apply the YAML configuration files:
+  + kubectl apply -f kubernetes-config/
 
+#### 3.  Kafka Setup ####
 
-- Start the Django server:
-python manage.py runserver
++ Add Kafka to the Kubernetes cluster.
++ Ensure topics like order_creation and status_update are created.
++ Example:
+ + kafka-topics.sh --create --topic order_creation --bootstrap-server localhost:9092
 
-<img width="727" alt="image" src="https://github.com/user-attachments/assets/06323c20-5b7a-4797-adbc-89495a9043e3">
+ #### 4. MongoDB Setup #### 
++ Deploy MongoDB in the Kubernetes cluster or connect to an external MongoDB instance.
++ Ensure user sessions are stored in MongoDB.
 
-3. Frontend Setup (React):
-- Go to the frontend folder:
-cd ../frontend
+ #### 5. Run Backend Services #### 
++ Use Kubernetes commands to start and monitor the services: kubectl get pods
 
-- Install npm packages:
+### 3. Frontend Setup ###
+
+#### 1. Navigate to frontend directory ####
+cd frontend 
+
+#### 2. Install dependencies ####
 npm install
 
-- Start the React development server:
-
+#### 3. Start the React development server ####
 npm start
 
-<img width="668" alt="image" src="https://github.com/user-attachments/assets/1c29ff5d-ea10-4a4b-b21a-801e351660bc">
+#### 4. Redux Integration #### 
++ Ensure Redux actions, reducers, and store are set up as per the provided example.
++ Update frontend components to use Redux for state management.
 
 
-<img width="561" alt="image" src="https://github.com/user-attachments/assets/c7f677e5-b484-4804-869f-beece0b15c05">
+## Deployment to AWS ## 
 
-
-
-## After installing: ## 
-
-+ Frontend: Open http://localhost:3000
-+ Backend: Open http://localhost:8000
-
-<img width="1057" alt="image" src="https://github.com/user-attachments/assets/9e35735e-fe41-4174-a1b5-706b88e25f3c">
-
-<img width="1099" alt="image" src="https://github.com/user-attachments/assets/36ca66fa-68a9-4a07-bcc4-dd77d67b16f2">
-
-<img width="1102" alt="image" src="https://github.com/user-attachments/assets/8e00f26c-6f1b-46f4-beba-8b14ec511846">
-
+1. Containerize the application using Docker.
+2. Push Docker images to AWS Elastic Container Registry (ECR).
+3. Deploy the Kubernetes cluster on AWS EKS.
+4. Use AWS S3 for hosting static files and Route 53 for domain management.
+5. Monitor services using AWS CloudWatch.
 
 
 
