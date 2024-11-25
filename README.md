@@ -96,9 +96,12 @@ npm start
 5. Monitor services using AWS CloudWatch.
 
 
-
 ## API Endpoints ## 
 Main API routes:
+
+### Frontend 
+
+### Backend ### 
 
 + http://127.0.0.1:8000/api/
 <img width="284" alt="image" src="https://github.com/user-attachments/assets/cfbd2be7-683e-4b36-95d8-a71622886489">
