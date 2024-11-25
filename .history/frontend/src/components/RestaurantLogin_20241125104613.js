@@ -1,18 +1,15 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
-import { login } from '../redux/slices/authSlice';
-import './CustomerLogin.css';
-import { Link } from 'react-router-dom';
-import { FcGoogle } from 'react-icons/fc';
+import { useNavigate, Link } from 'react-router-dom';
+import './RestaurantLogin.css'
 import { FaApple } from 'react-icons/fa';
+import { FcGoogle } from 'react-icons/fc';
 import { RiQrCodeLine } from 'react-icons/ri';
 
-const CustomerLogin = () => {
+const RestaurantLogin = () => {
     const [credentials, setCredentials] = useState({ username: '', password: '' });
+    const [error,setError] = useState('');
     const navigate = useNavigate();
-    const dispatch = useDispatch();
 
     const handleChange = (e) => {
         setCredentials({
@@ -25,26 +22,40 @@ const CustomerLogin = () => {
         e.preventDefault();
 
         try {
-            const response = await axios.post('http://localhost:8000/api/customers/login/', credentials);
-            dispatch(login(response.data));
+            const response = await axios.post('http://localhost:8000/api/restaurants/login/', credentials, {
+                headers: {
+                    'Content-Type': 'application/json',
+                }
+            });
+            localStorage.setItem('access_token', response.data.access);
+            localStorage.setItem('refresh_token', response.data.refresh);
             alert('Login successful');
-            navigate('/home');
+            navigate('/restaurantdashboard');  // Redirect to the Restaurant page
         } catch (error) {
-            console.error('Login failed:', error);
-            alert('Login failed. Please check your credentials.');
+            console.error('Login failed:', error.response ? error.response.data : error);
+            if (error.response && error.response.data.error) {
+                setError(error.response.data.error);  // Display the error message from the backend
+            } else {
+                setError('Login failed. Please check your credentials.');
+            }
         }
     };
 
     return (
-        <div className="login-container">
+        <div>   
+            <div className="login-container">
             <div className="login-header">
-                <Link to="/home" className="brand-title">Uber <span>Eats</span></Link>  
-            </div>
+            <Link to="/home" className="brand-title">Uber <span>Business</span></Link>  
+        </div>
+    
             <form onSubmit={handleSubmit} className="login-form">
-                <h3>Customer Login</h3>
-                <input type="text" name="username" onChange={handleChange} placeholder="Customer Username" required />
+
+                <h3>Restaurant Login</h3>
+                <input type="text" name="username" onChange={handleChange} placeholder="Restaurant Username" required />
                 <input type="password" name="password" onChange={handleChange} placeholder="Password" required />
                 <button type="submit" className="continue-button">Login</button>
+                {error && <p className="error-message">{error}</p>}
+
                 <div className="divider">
                     <hr className="line" /> <span>or</span> <hr className="line" />
                 </div>
@@ -64,7 +75,8 @@ const CustomerLogin = () => {
                 </p>
             </form>
         </div>
-    );
+    </div>
+);
 };
 
-export default CustomerLogin;
+export default RestaurantLogin;
