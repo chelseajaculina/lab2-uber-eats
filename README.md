@@ -2,7 +2,7 @@
 
 A prototype of Uber Eats web app using Django backend and React frontend. This project lets users browse and order food from restaurants, manage profiles, etc.
 
-This project part 2 enhances the Lab 1 Uber Eats prototype by containerizing services, orchestrating them with Kubernetes, integrating Kafka for asynchronous messaging, deploying the application to AWS, and using Redux for state management.
+This project part 2 enhances the Lab 1 Uber Eats prototype by containerizing services, orchestrating them with Kubernetes, integrating Kafka for asynchronous messaging, deploying the application to Docker and using Redux for state management.
 
 ## Features ## 
  ### Backend ### 
