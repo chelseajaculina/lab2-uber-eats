@@ -1,8 +1,8 @@
-# Uber Eats Simulation - Part 2 with Docker, Kubernetes, Kafka, AWS, and Redux #
+# Uber Eats Simulation - Part 2 with Docker, Kubernetes, Kafka, and Redux #
 
 A prototype of Uber Eats web app using Django backend and React frontend. This project lets users browse and order food from restaurants, manage profiles, etc.
 
-This project part 2 enhances the Lab 1 Uber Eats prototype by containerizing services, orchestrating them with Kubernetes, integrating Kafka for asynchronous messaging, deploying the application to AWS, and using Redux for state management.
+This project part 2 enhances the Lab 1 Uber Eats prototype by containerizing services, orchestrating them with Kubernetes, integrating Kafka for asynchronous messaging, deploying the application to Docker and using Redux for state management.
 
 ## Features ## 
  ### Backend ### 
@@ -18,14 +18,9 @@ This project part 2 enhances the Lab 1 Uber Eats prototype by containerizing ser
 ++ Order Data (Cart, Order Status Updates).
 
 ## Technologies Used ## 
-+ Backend: Django, Django REST Framework
-+ Frontend: React, Axios (for API requests)
-+ Database: SQLite 
-
-+Backend: Docker, Kubernetes, Kafka, MongoDB, AWS
-+rontend: React, Redux
-+Database: MongoDB (with encrypted passwords)
-
++ Backend: Django, Django REST Framework, Docker, Kubernetes, Kafka, MongoDB, AWS
++ Frontend: React, Axios (for API requests),Redux
++ Database: SQLite, MongoDB (with encrypted passwords)
 
 ## Features ## 
 + User registration and login
@@ -39,68 +34,64 @@ This project part 2 enhances the Lab 1 Uber Eats prototype by containerizing ser
 + Node.js with npm
 + Django
 + React
++ Redux 
 
 ## Steps ##
-1. Clone this repository:
+### 1. Clone this repository: ### 
 
 - git clone https://github.com/your-username/your-project-name.git
 - cd your-project-name
 
-2. Backend Setup (Django):
-- Go to the backend folder:
-cd backend
+### 2. Backend Setup: ### 
 
-- Create a virtual environment and install dependencies:
-python3 -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
+#### 1. Dockerize Services:   ####
+ 
++ Build Docker images for User, Restaurant, and Order services.
++ Use the provided Dockerfile in each service directory.
 
-- Apply database migrations:
-python manage.py migrate
++ Example:
+  + docker build -t user-service ./user-service
 
-- Create an admin user:
-python manage.py createsuperuser
+#### 2. Kubernetes Deployment #### 
++ Deploy the services to a Kubernetes cluster
++ Apply the YAML configuration files:
+  + kubectl apply -f kubernetes-config/
 
+#### 3.  Kafka Setup ####
 
-- Start the Django server:
-python manage.py runserver
++ Add Kafka to the Kubernetes cluster.
++ Ensure topics like order_creation and status_update are created.
++ Example:
+ + kafka-topics.sh --create --topic order_creation --bootstrap-server localhost:9092
 
-<img width="727" alt="image" src="https://github.com/user-attachments/assets/06323c20-5b7a-4797-adbc-89495a9043e3">
+ #### 4. MongoDB Setup #### 
++ Deploy MongoDB in the Kubernetes cluster or connect to an external MongoDB instance.
++ Ensure user sessions are stored in MongoDB.
 
-3. Frontend Setup (React):
-- Go to the frontend folder:
-cd ../frontend
+ #### 5. Run Backend Services #### 
++ Use Kubernetes commands to start and monitor the services: kubectl get pods
 
-- Install npm packages:
+### 3. Frontend Setup ###
+
+#### 1. Navigate to frontend directory ####
+cd frontend 
+
+#### 2. Install dependencies ####
 npm install
 
-- Start the React development server:
-
+#### 3. Start the React development server ####
 npm start
 
-<img width="668" alt="image" src="https://github.com/user-attachments/assets/1c29ff5d-ea10-4a4b-b21a-801e351660bc">
-
-
-<img width="561" alt="image" src="https://github.com/user-attachments/assets/c7f677e5-b484-4804-869f-beece0b15c05">
-
-
-
-## After installing: ## 
-
-+ Frontend: Open http://localhost:3000
-+ Backend: Open http://localhost:8000
-
-<img width="1057" alt="image" src="https://github.com/user-attachments/assets/9e35735e-fe41-4174-a1b5-706b88e25f3c">
-
-<img width="1099" alt="image" src="https://github.com/user-attachments/assets/36ca66fa-68a9-4a07-bcc4-dd77d67b16f2">
-
-<img width="1102" alt="image" src="https://github.com/user-attachments/assets/8e00f26c-6f1b-46f4-beba-8b14ec511846">
-
-
-
+#### 4. Redux Integration #### 
++ Ensure Redux actions, reducers, and store are set up as per the provided example.
++ Update frontend components to use Redux for state management.
 
 ## API Endpoints ## 
 Main API routes:
+
+### Frontend 
+
+### Backend ### 
 
 + http://127.0.0.1:8000/api/
 <img width="284" alt="image" src="https://github.com/user-attachments/assets/cfbd2be7-683e-4b36-95d8-a71622886489">
