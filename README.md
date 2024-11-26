@@ -124,4 +124,5 @@ Main API routes:
      + kafka
      + zookeeper
   + screenshots
+
 ![KubernetesFileDirectory](https://github.com/user-attachments/assets/1eb69201-b6b2-42c7-9a41-3cf42badf397)
