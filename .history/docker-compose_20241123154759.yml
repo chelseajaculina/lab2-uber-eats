@@ -1,0 +1,19 @@
+services:
+  backend:
+    build:
+      context: ./backend
+    volumes:
+      - ./backend/media:/app/media
+    ports:
+      - "8000:8000"
+
+  frontend:
+    build:
+      context: ./frontend
+    volumes:
+      - ./frontend/public/images:/app/images
+    ports:
+      - "3000:3000"
+
+volumes:
+  images:

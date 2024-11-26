@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+      - name: backend
+        image: himani3/ubereats-backend:latest
+        ports:
+        - containerPort: 8000
+        env:
+        - name: KAFKA_BROKER_URL
+          value: "kafka:9092"
+        volumeMounts:
+        - mountPath: /app/media
+          name: media-volume
+      volumes:
+      - hostPath:
+          path: /run/desktop/mnt/host/c/MSDA/sem\ 2/Data\ 236/lab/lab2-uber-eats/backend/media
+        name: media-volume
