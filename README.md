@@ -4,6 +4,9 @@ A prototype of Uber Eats web app using Django backend and React frontend. This p
 
 This project part 2 enhances the Lab 1 Uber Eats prototype by containerizing services, orchestrating them with Kubernetes, integrating Kafka for asynchronous messaging, deploying the application to Docker and using Redux for state management.
 
+## Lab 1 Repo: ## 
++ https://github.com/chelseajaculina/lab1-uber-eats
+
 ## Features ## 
  ### Backend ### 
 + Dockerized Services: User, Restaurant, and Order services.
@@ -89,7 +92,9 @@ npm start
 ## API Endpoints ## 
 Main API routes:
 
-### Frontend 
+### Frontend ### 
+
++ http://localhost:3000
 
 ### Backend ### 
 
@@ -102,9 +107,21 @@ Main API routes:
 + http://127.0.0.1:8000/api/restaurants/
 <img width="677" alt="image" src="https://github.com/user-attachments/assets/ac947ba3-866c-42e4-a38a-504802cc51a1">
 
+## Screenshots Folder ##
++ Docker Setup
++ Services Running on AWS: Include screenshots of Kubernetes pods and Kafka message flows.
++ Redux State Management: Authentication, restaurant data, and order state flow.
 
-## Project Structure
+<img width="218" alt="Redux-Directory" src="https://github.com/user-attachments/assets/1e414ba3-7dd1-4203-9b58-fe5166c831dc">
+
+## Project Structure ## 
 + main project
   + backend
   + frontend
+  + kubernetes
+     + backend
+     + frontend
+     + kafka
+     + zookeeper
   + screenshots
+![KubernetesFileDirectory](https://github.com/user-attachments/assets/1eb69201-b6b2-42c7-9a41-3cf42badf397)
