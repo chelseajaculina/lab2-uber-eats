@@ -21,4 +21,3 @@ spec:
         - containerPort: 2181
         env:
         - name: ALLOW_ANONYMOUS_LOGIN
-          value: "yes"

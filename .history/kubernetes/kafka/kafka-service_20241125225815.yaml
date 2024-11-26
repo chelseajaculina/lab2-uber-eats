@@ -12,3 +12,5 @@ spec:
   - name: kafka
     port: 9092
     targetPort: 9092
+  selector:
+    app: kafka
